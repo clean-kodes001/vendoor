@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
 import { MdEmail, MdLock, MdVisibility, MdVisibilityOff, MdStorefront, MdArrowBack } from 'react-icons/md'
 import { FaShoppingBag } from 'react-icons/fa'
@@ -14,10 +14,9 @@ type Mode = 'signin' | 'signup' | 'otp' | 'forgot' | 'reset_password'
 
 export default function AuthPage() {
   const router = useRouter()
-  const params = useSearchParams()
   const { setAuth, isAuthenticated, isVendor } = useAuthStore()
 
-  const [mode, setMode] = useState<Mode>((params.get('mode') as Mode) ?? 'signin')
+  const [mode, setMode] = useState<Mode>( 'signin')
   const [loading, setLoading] = useState(false)
   const [showPass, setShowPass] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
