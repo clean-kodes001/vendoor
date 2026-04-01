@@ -8,7 +8,6 @@ import { useCart } from '@/hooks/useCart'
 import { billingApi, orderApi } from '@/lib/api'
 import { ngn, parseImages, isValidEmail, isValidPhone } from '@/lib/utils'
 
-declare global { interface Window { PaystackPop?: { setup: (c: { key: string; email: string; amount: number; currency: string; ref: string; onClose: () => void; callback: (r: { reference: string }) => void }) => { openIframe: () => void } } } }
 
 export default function CheckoutPage() {
   const router = useRouter()
