@@ -70,9 +70,7 @@ export default function OrderDetailsPage() {
             <MdArrowBack size={24} />
           </button>
           <h1 className="font-[900] text-[13px] tracking-[2px] uppercase text-gray-400">Order Invoice</h1>
-          <button onClick={() => window.print()} className="p-2 text-gray-400 hover:text-black transition-colors">
-            <MdPrint size={22} />
-          </button>
+        
         </div>
       </div>
 

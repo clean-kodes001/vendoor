@@ -26,9 +26,7 @@ export function parseImages(raw: string): string[] {
 }
 
 export function getDeviceInfo() {
-  return typeof window !== 'undefined'
-    ? `${navigator.userAgent.slice(0, 60)} | ${window.innerWidth}x${window.innerHeight}`
-    : 'server'
+ return 'web'
 }
 
 export async function fileToBase64(file: File): Promise<string> {

@@ -33,19 +33,8 @@ export default function CheckoutPage() {
     try {
       await billingApi.save(form.address)
       const ref = 'VND-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7).toUpperCase()
-      if (!window.PaystackPop) {
-        await new Promise<void>((res) => { const s = document.createElement('script'); s.src = 'https://js.paystack.co/v1/inline.js'; s.onload = () => res(); document.head.appendChild(s) })
-      }
-      window.PaystackPop!.setup({
-        key: process.env.NEXT_PUBLIC_PAYSTACK_KEY ?? 'pk_test_placeholder',
-        email: form.email, amount: Math.round(total) * 100, currency: 'NGN', ref,
-        onClose: () => { setLoading(false); toast.error('Payment cancelled') },
-        callback: async (r) => {
-          try { await orderApi.checkout(r.reference); clearCart(); router.push(`/buyer/success?ref=${r.reference}`) }
-          catch { toast.error('Order confirmation failed. Contact support.') }
-          finally { setLoading(false) }
-        },
-      }).openIframe()
+     
+     
     } catch { toast.error('Something went wrong. Try again.'); setLoading(false) }
   }
 
