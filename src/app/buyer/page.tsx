@@ -66,7 +66,7 @@ export default function BuyerHomePage() {
   const [prods, setProds] = useState<Record<string, Product[]>>({})
   const [loading, setLoading] = useState<Record<string, boolean>>({})
   const [vendors, setVendors] = useState<Vendor[]>([])
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const timerRef = useRef<any>(null)
 
   const startHeroTimer = () => {
     if (timerRef.current) clearInterval(timerRef.current)

@@ -45,7 +45,7 @@ export default function CheckoutPage() {
     </div>
   )
 
-  const inp = (k: keyof typeof form) => `w-full px-[14px] py-[11px] border-[1.5px] rounded-[10px] text-sm outline-none transition-colors ${errors[k] ? 'border-red-400 focus:border-red-500' : 'border-[#D0D0D0] focus:border-[#F85606]'}`
+  const inp = (k: any) => `w-full px-[14px] py-[11px] border-[1.5px] rounded-[10px] text-sm outline-none transition-colors ${errors[k] ? 'border-red-400 focus:border-red-500' : 'border-[#D0D0D0] focus:border-[#F85606]'}`
 
   return (
     <div className="page-enter">
