@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import { vendorsApi } from '@/lib/api'
 import { dedupe } from '@/lib/utils'
 import type { Vendor } from '@/types'
-import Stars from '@/components/ui/Stars'
 
 export default function VendorsPage() {
   const router = useRouter()
